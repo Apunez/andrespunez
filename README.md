@@ -43,8 +43,6 @@ Gilberto/
 
 ## Demo en línea
 
-**GitHub Pages:** https://rolf-droid.github.io/financiero/
-
 ## Cómo usar
 
 1. Abre **`index.html`** en un navegador moderno (Chrome, Firefox, Edge, Safari), o la URL de GitHub Pages arriba.
