@@ -43,7 +43,7 @@ Andres Alberto/
 
 ## Demo en línea
 
-**GitHub Pages:** https://rolf-droid.github.io/financiero/
+
 
 ## Cómo usar
 
