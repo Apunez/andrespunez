@@ -96,11 +96,44 @@ function applyRoleRestrictions(){
 function updateSidebarUser(){
   const label = document.getElementById('sidebar-user-label');
   const role  = document.getElementById('sidebar-role-label');
-  if(label) label.textContent = SESSION.nombre;
+  if(label) label.textContent = SESSION.nombre || '—';
   if(role){
+    if(!SESSION.user){
+      role.textContent = '';
+      return;
+    }
     role.textContent = SESSION.role === 'editor' ? '✏️ Editor' : '👁 Solo Lectura';
     role.style.color = SESSION.role === 'editor' ? '#34D399' : '#FBBF24';
   }
+}
+
+function doLogout(){
+  SESSION = { user: '', nombre: '', role: 'editor', isAdmin: false };
+
+  const screen = document.getElementById('login-screen');
+  screen.style.display = '';
+  screen.style.opacity = '1';
+  screen.style.transform = 'none';
+
+  const userInp = document.getElementById('login-user');
+  const passInp = document.getElementById('login-pass');
+  if(userInp) userInp.value = '';
+  if(passInp){
+    passInp.value = '';
+    passInp.type = 'password';
+  }
+  const err = document.getElementById('login-error');
+  if(err) err.style.display = 'none';
+  const showBtn = document.getElementById('show-btn');
+  if(showBtn) showBtn.textContent = '👁';
+
+  const navAjustes = document.getElementById('nav-ajustes');
+  if(navAjustes) navAjustes.style.display = '';
+
+  updateSidebarUser();
+  if(typeof showPage === 'function') showPage('datos');
+
+  showToast('👋 Sesión cerrada correctamente', 'info');
 }
 
 function togglePass(){
