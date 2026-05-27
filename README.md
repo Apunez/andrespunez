@@ -5,7 +5,7 @@ Aplicación web de reportes financieros (ejercicio 2024, soles).
 ## Estructura del proyecto
 
 ```
-Puñes Arana /
+Andres Alberto Puñez Arana /
 ├── index.html                    # Punto de entrada (generado o manual)
 ├── Sistema_Financiero_Andina.html  # Versión monolítica original (respaldo)
 ├── assets/
